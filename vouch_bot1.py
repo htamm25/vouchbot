@@ -154,7 +154,7 @@ class FeedbackModal(discord.ui.Modal, title="Gửi Feedback"):
             target = interaction.guild.get_channel(chan_id) if chan_id else self.origin_channel
 
             if target:
-                await target.send(f"Feedback của {self.buyer.mention}:", embed=embed)
+                await target.send(f"<:feedback1:1388824011617603689>•Feedback của {self.buyer.mention}:", embed=embed)
                 logger.info(f"Feedback sent for {self.buyer.id} with {self.stars} stars")
                 
                 # Cập nhật tin nhắn gốc
@@ -341,9 +341,9 @@ async def vouch(
 
         # Tạo tin nhắn thường thay vì embed
         vouch_text = (
-            f"🎉 **Giao dịch thành công!**\n\n"
+            f"<:giveaway1:1388824182237958155> **Giao dịch thành công!**\n\n"
             f"{thankyou} {buyer.mention}\n\n"
-            f"**LewLewStore** xin bạn một ít phút để đánh giá dịch vụ tại đây nhé !!! chúng mình luôn muốn lắng nghe góp ý của các bạn và cải thiện dịch vụ tại **LewLewStore**\n\n"
+            f"<:Shop1:1388824257748013181>**LewLewStore** xin bạn một ít phút để đánh giá dịch vụ tại đây nhé !!! chúng mình luôn muốn lắng nghe góp ý của các bạn và cải thiện dịch vụ tại **LewLewStore**\n\n"
             f"```+vouch {buyer.mention} x{quantity} {product} {price} vnd legit```\n"
             f"- Mình xin chút ít thời gian của bạn để ủng hộ mình 1 vouch bằng cách sao chép nội dung ở trên và dán ở <#1294909151515774999> hoặc 1 feedback bằng nút bên dưới (có thể cả vừa vouch và feeddback nếu bạn muốn)"
         )
